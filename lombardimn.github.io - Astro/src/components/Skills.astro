@@ -1,0 +1,83 @@
+---
+import Icon from "@/components/Icon.astro";
+---
+
+<section class="box skills">
+    <article class="stack gap-2 lg:gap-4">
+			<div class="stack box-stack gap-2 lg:gap-4">
+        <Icon icon="monitor" color="var(--accent-regular)" size="2.5rem" gradient />
+        <h2>Frontend Developer with React</h2>
+			</div>
+        <p>Mi objetivo es crear experiencias atractivas e intuitivas. Me apasiona enfrentar desafíos de la industria y contribuir al crecimiento.</p>
+    </article>
+    <article class="stack gap-2 lg:gap-4">
+			<div class="stack box-stack gap-2 lg:gap-4">
+        <Icon icon="terminal-window" color="var(--accent-regular)" size="2.5rem" gradient />
+        <h2>FullStack Java Developer</h2>
+			</div>
+        <p>Este rol me ofrece adaptabilidad en distintos proyectos y roles de desarrollo, brindándome valiosas oportunidades de aprendizaje.</p>
+    </article>
+    <article class="stack gap-2 lg:gap-4">
+			<div class="stack box-stack gap-2 lg:gap-4">
+        <Icon icon="strategy" color="var(--accent-regular)" size="2.5rem" gradient />
+        <h2 class="title-skill">Analista Funcional</h2>
+			</div>
+        <p>Traduzco requerimientos de clientes en soluciones tecnológicas. Mi rol va desde analizar necesidades, diseñar y planificar, hasta colaborar con equipos de desarrollo.</p>
+    </article>
+</section>
+
+<style>
+	.box {
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		padding: 1.5rem;
+		background-color: var(--gray-999_40);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.skills {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+	}
+
+	.skills h2 {
+		font-size: var(--text-lg);
+	}
+
+	.skills p {
+		color: var(--gray-400);
+	}
+
+	@media (min-width: 50em) {
+		.box {
+			border-radius: 1.5rem;
+			padding: 2.5rem;
+		}
+
+		.skills {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 5rem;
+		}
+
+		.skills h2 {
+			font-size: var(--text-2xl);
+		}
+
+		.title-skill {
+		max-width: 9ch;
+		white-space: normal;
+		}
+
+		.box-stack {
+		min-height: 13rem;
+		}
+	}
+
+	@media (min-width: 60em) {
+		.box-stack {
+		min-height: 10rem;
+		}
+	}
+</style>
