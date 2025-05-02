@@ -1,0 +1,9 @@
+---
+const { class: classname } = Astro.props;
+---
+
+<nav>
+  <ul class={classname}>
+    <slot />
+  </ul>
+</nav>

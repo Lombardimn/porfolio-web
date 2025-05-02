@@ -1,0 +1,31 @@
+---
+import Footer from '@/components/layout/Footer.astro';
+import Header from '@/components/layout/Header.astro';
+import '@/styles/global.css';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>@lombardidev | Personal Site</title>
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/duotone/style.css"
+    />
+  </head>
+	</head>
+
+	<Header />
+	
+	<body>
+		{/** Renderiza el contenido  */}
+		<slot />
+	</body>
+	
+	<Footer />
+</html>

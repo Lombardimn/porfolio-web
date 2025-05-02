@@ -1,0 +1,43 @@
+---
+import astroLogo from "@/assets/icons/astro-logo-light-gradient.svg";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="h-20 text-xl font-light bg-gray-900 content-center">
+  <section class="max-w-7xl mx-auto flex flex-row justify-between items-center">
+    <div class="flex flex-row gap-5 w-1/2 items-center">
+      <p class="flex flex-row items-center">
+        Desarrollado con
+        <a href="https://astro.build/" target="_blank" no-referrer no-opener>
+          <img src={astroLogo.src} alt="Astro Homepage" class="w-24 h-auto" />
+        </a>
+      </p>
+      <p>&copy; {currentYear} @lombardidev</p>
+    </div>
+    <div class="flex flex-row gap-5 w-1/2 items-center justify-end">
+      <ul class="flex flex-row gap-5">
+        <li>
+          <a
+            href="https://github.com/Lombardimn"
+            target="_blank"
+            no-referrer
+            no-opener
+          >
+            GitHub
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://linkedin.com/in/mnlombardi/"
+            target="_blank"
+            no-referrer
+            no-opener
+          >
+            LinkedIn
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</footer>

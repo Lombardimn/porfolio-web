@@ -1,0 +1,62 @@
+---
+import astroLogo from "@/assets/icons/astro-logo-light-gradient.svg";
+import ThemeToggle from "@/components/ui/ThemeToggle.astro";
+import NavContent from "../header/NavContent.astro";
+import NavContainer from "../header/NavContainer.astro";
+
+/* Items para el menu */
+const menuLinks: Array<{ label: string; href: string }> = [
+  { label: "Inicio", href: "/" },
+  { label: "Proyectos", href: "/work" },
+  { label: "Sobre Mí", href: "/about" },
+  { label: "Contacto", href: "/contact" },
+];
+
+/** Links para redes sociales */
+const socialLinks: Array<{ label: string; href: string; icon: string }> = [
+  { label: "GitHub", href: "https://github.com/Lombardimn", icon: "ph-github-logo" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/mnlombardi/", icon: "ph-linkedin-logo"},
+];
+---
+
+<header class="fixed top-0 left-0 w-full z-50">
+  <div>
+    <section class="flex flex-row items-center justify-between h-20 px-4 pt-2 backdrop-blur-md shadow-md">
+      <a href="/">
+        <img src={astroLogo.src} alt="Logo del sitio" class="w-24 h-auto" />
+      </a>
+
+      {/** Menu para dispositivos móviles */}
+      <menu-button menu-target="menu-content">
+          <button
+            class:list={[
+              "relative flex items-center justify-center rounded-full p-2 text-2xl shadow-md transition-colors",
+              "bg-radial from-gray-600 to-gray-800 to-75% shadow-md text-gray-50"  
+            ]}
+            aria-expanded="false"
+          >
+            <span class="sr-only">Menú</span>
+            <i class="ph-duotone ph-list"></i>
+            <span class="p"></span>
+          </button>
+      </menu-button>
+
+    </section>
+    <section id="menu-content" class="hidden md:block bg-gray-950">
+      <NavContainer>
+        <NavContent links={menuLinks} />
+      </NavContainer>
+      <div class="flex flex-row justify-between items-center pt-4 divide-x divide-white">
+        <NavContainer class="flex flex-row gap-1 px-4">
+          <NavContent links={socialLinks} alternative />
+        </NavContainer>
+        <div class="pr-4">
+          <ThemeToggle />
+        </div>
+      </div>
+    </section>
+  </div>
+</header>
+
+
+<script src="../../scripts/menuToggle.ts"></script>
