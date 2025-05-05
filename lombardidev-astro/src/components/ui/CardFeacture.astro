@@ -1,0 +1,28 @@
+---
+interface Props {
+  features: {
+    title: string;
+    description: string;
+    icon: string;
+    features: Array<{ label: string }>;
+  }
+}
+
+const { features } = Astro.props as Props;
+---
+<div class="flex items-center gap-2">
+  <div class="bg-teal-700 p-2 rounded-full w-12 h-12 flex items-center justify-center text-slate-50">
+    <i class={`ph-duotone ${features.icon}`} style="font-size: 24px;"></i>
+  </div>
+  <h3 class="font-bold text-2xl">{features.title}</h3>
+</div>
+<div class="flex flex-col gap-2">
+  <span class="font-semibold">{features.description}</span>
+  <ol class="list-outside list-disc pl-4 space-y-1">
+    {
+      features.features.map((feat) => (
+        <li class="font-light text-md" id={`feature-${feat.label}`}>{feat.label}</li>
+      ))
+    }
+  </ol>
+</div>

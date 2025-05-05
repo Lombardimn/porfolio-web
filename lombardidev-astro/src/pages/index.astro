@@ -1,13 +1,45 @@
 ---
+import avatar from '@/assets/images/avatar.png';
+import Features from '@/components/layout/Features.astro';
+import Hero from '@/components/layout/Hero.astro';
+import CallToAction from '@/components/ui/CallToAction.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 ---
 
 <BaseLayout>
 	<main class="flex-1 mt-24 max-w-7xl mx-auto">
-		<p>Hero</p>
-		<p>Feactures</p>
-		<p>Projects</p>
-		<p>PeopleTAM</p>
-		<p>CallToAction</p>
+		<Hero
+			title="Soy Matias Lombardi"
+			subtitle="Hola a todos 👋!"
+			description="Product Owner & Fullstack Developer"
+			align="start"
+			class="px-4 flex flex-col space-y-4"
+		>
+			<div class="flex flex-col gap-4 mb-4">
+				<img 
+					src={avatar.src} 
+					alt="Matias Lombardi, sonriendo, de fondo su mundo resumido en un escritorio personalizado"
+					class="w-auto h-auto rounded-xl drop-shadow-2xl shadow-teal-700"
+				>
+				<div class="w-full mx-auto text-center">
+					<CallToAction 
+						href="mailto:contactos@lombardidev.ar"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="py-2 px-8 w-auto text-center rounded-full no-underline shadow-md text-slate-50 bg-gradient-to-r from-teal-700 via-green-500 to-teal-900"
+					>
+						Contactame
+					</CallToAction>
+				</div>
+			</div>
+		</Hero>
+
+		<Features />
+		<div class="bg-red-500">
+			<p>Projects</p>
+			<p>PeopleTAM</p>
+			<p>CallToAction</p>
+		</div>
+
 	</main>
 </BaseLayout>

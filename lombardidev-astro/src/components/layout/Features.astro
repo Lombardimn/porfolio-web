@@ -1,0 +1,48 @@
+---
+import CardContainer from "../ui/CardContainer.astro";
+import CardFeacture from "../ui/CardFeacture.astro";
+
+const itemsFeatures = [
+  { 
+    title: "Product Owner",
+    description: "Convierto necesidades en soluciones que generan impacto.",
+    icon: "ph-puzzle-piece",
+    features: [
+      {label: "Priorización efectiva del backlog según objetivos del negocio."},
+      {label: "Definición clara de funcionalidades y flujos de usuario."},
+      {label: "Comunicación fluida entre stakeholders y el equipo técnico.",},
+      {label: "Acompañamiento en todo el ciclo de vida del producto.",}
+    ]
+  },
+  {
+    title: "Fullstack Developer",
+    description: "Diseño y desarrollo productos digitales de punta a punta. ",
+    icon: "ph-code",
+    features: [
+      {label: "Desarrollo frontend y backend con tecnologías actuales."},
+      {label: "Arquitectura optimizada y escalable."},
+      {label: "Interfaces intuitivas y responsivas."},
+      {label: "Integraciones, bases de datos y lógica de negocio sólida."},
+    ]
+  }
+]
+---
+
+<section class="px-4 pt-6 pb-4 bg-white">
+  <div>
+    <h2 class="text-3xl text-slate-900 font-semibold">¿En que puedo ayudarte?</h2>
+    <p class="text-lg text-teal-800 py-4 pl-2">Impulso ideas digitales que resuelven problemas reales.</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pb-4">
+    <CardContainer class="flex flex-col gap-1 p-4 rounded-2xl border border-solid border-slate-900/10 shadow-md">
+      <CardFeacture features={itemsFeatures[0]} />
+    </CardContainer>
+
+    <CardContainer class="flex flex-col gap-1 p-4 rounded-2xl border border-solid border-slate-900/10 shadow-md">
+      <CardFeacture features={itemsFeatures[1]} />
+    </CardContainer>
+  </div>
+
+  
+</section>

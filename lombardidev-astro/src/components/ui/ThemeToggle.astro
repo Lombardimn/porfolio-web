@@ -19,13 +19,19 @@
   #themeToggle {
     border: 0;
     background: none;
+    transition: color 300ms ease-in-out;
   }
   /** TODO: debo modificar los valores cuando establezca los valores de tema */
-  .sun { fill: white; }
+  .sun { fill: var(--color-slate-900); }
   .moon { fill: transparent; }
 
-  :global(.dark) .sun { fill: transparent; }
-  :global(.dark) .moon { fill: white; }
+  .sun:hover, .sun:focus { fill: var(--color-teal-700); }
+  .moon:hover, .moon:focus {  fill: transparent; }
+
+  :global(.dark) .sun, :global(.dark) .sun:hover, :global(.dark) .sun:focus { fill: transparent; }
+  :global(.dark) .moon { fill: var(--color-stone-50); }
+
+  :global(.dark) .moon:hover, :global(.dark) .moon:focus { fill: var(--color-teal-700); }
 </style>
 
 <script is:inline>

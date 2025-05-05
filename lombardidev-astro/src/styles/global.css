@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  background-color: var(--color-white);
-  color: var(--color-gray-950);
+  background-color: var(--color-stone-50);
+  color: var(--color-slate-900);
 }
 
 :root.dark {

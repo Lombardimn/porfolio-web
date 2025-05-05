@@ -30,8 +30,9 @@ const socialLinks: Array<{ label: string; href: string; icon: string }> = [
       <menu-button menu-target="menu-content">
           <button
             class:list={[
-              "relative flex items-center justify-center rounded-full p-2 text-2xl shadow-md transition-colors",
-              "bg-radial from-gray-600 to-gray-800 to-75% shadow-md text-gray-50"  
+              "relative flex items-center justify-center rounded-full p-2 text-2xl transition-colors bg-radial text-slate-900 shadow-sm shadow-gray-700/30",
+              "from-gray-200 hover:from-teal-700/30 dark:hover:from-gray-700",
+              "dark:text-stone-50 dark:from-gray-600 dark:to-gray-800 to-70%"  
             ]}
             aria-expanded="false"
           >
@@ -42,11 +43,12 @@ const socialLinks: Array<{ label: string; href: string; icon: string }> = [
       </menu-button>
 
     </section>
-    <section id="menu-content" class="hidden md:block bg-gray-950">
-      <NavContainer>
+    <section id="menu-content" class="hidden md:block pb-4 shadow-sm shadow-gray-700/30 dark:shadow-white/30 dark:bg-gray-950 bg-stone-50">
+      <NavContainer class="dark:last:shadow-white/30 dark:last:shadow-sm">
         <NavContent links={menuLinks} />
+        <span class="block w-11/12 h-0.5 mx-auto border-b-[0.5px] border-gray-700/30"></span>
       </NavContainer>
-      <div class="flex flex-row justify-between items-center pt-4 divide-x divide-white">
+      <div class="flex flex-row justify-between items-center pt-4 md:divide-x md:divide-white">
         <NavContainer class="flex flex-row gap-1 px-4">
           <NavContent links={socialLinks} alternative />
         </NavContainer>

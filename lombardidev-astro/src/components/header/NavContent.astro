@@ -12,7 +12,7 @@ const { links, alternative } = Astro.props as {
         {
           !alternative
             ? (
-              <li class="py-3 w-full last:border-b hover:text-green-500 hover:bg-green-900/20 last:border-b-white las:shadow-md">
+              <li class="py-3 w-full hover:text-teal-700 hover:bg-slate-900/20">
                 <a
                   aria-current={Astro.url.pathname === href}
                   class:list={[
@@ -26,7 +26,7 @@ const { links, alternative } = Astro.props as {
                   ]}
                   href={href}
                 >
-                  <span>{label}</span>
+                  <span class="font-base">{label}</span>
                 </a>
               </>
             )
@@ -34,7 +34,7 @@ const { links, alternative } = Astro.props as {
               <li>
                 <a
                   href={href}
-                  class="text-white hover:text-green-500 focus:text-green-500"
+                  class="dark:text-stone-50 hover:text-teal-700 transition-colors ease-in-out duration-300"
                 >
                   <span class="sr-only">{label}</span>
                   <i class={`ph-duotone ${icon}`} style="font-size: 32px;" />

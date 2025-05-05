@@ -1,0 +1,27 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  description: string;
+  align?: 'start' | 'center';
+  class?: string;
+}
+
+const { title, subtitle, description, align = 'center', class: className } = Astro.props as Props;
+---
+
+<section 
+  id="hero"
+  class={`text-${align} ${className}`}>
+  <div class="space-y-2">
+    <h2 class={`text-3xl font-semibold text-${align} text-teal-700`}>{subtitle}</h2>
+    <h1 class={`text-5xl font-bold text-${align}`}>{title}</h1>
+  </div>
+  <div>
+    <p class={`text-${align} font-light text-xl text-teal-700 text-shadow-2xs shadow-teal-500`}>{description}</p>
+  </div>
+
+  <div>
+    <slot />
+  </div>
+</section>
