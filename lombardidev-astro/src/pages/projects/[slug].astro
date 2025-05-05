@@ -1,0 +1,42 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getCollection, render } from "astro:content";
+
+
+export async function getStaticPaths() {
+  const works = await getCollection('works')
+
+  return works.map((work) => ({
+    params: { slug: work.slug },
+    props: { work },
+  }))
+}
+
+const { work } = Astro.props
+const { data } = work
+const { title, description, publishDate, img, repo, demo, status, tags } = data
+
+const { Content } = await render(work)
+---
+
+<BaseLayout>
+  <main class="flex flex-col mt-24">
+  <section>
+    <h1>{title}</h1>
+    <p>{description}</p>
+    <p>{publishDate}</p>
+    <img src={img} alt={title} />
+  </section>
+
+  <section>
+    <p>{repo}</p>
+    <p>{demo}</p>
+    <p>{status}</p>
+    <p>{tags}</p>
+  </section>
+
+  <section class="prose">
+    <Content />
+  </section>
+</ma>
+</BaseLayout>

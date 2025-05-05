@@ -1,0 +1,89 @@
+---
+import { Carousel } from "../ui/client/Carousel"
+
+const testimonials = [
+  {
+    id: 1,
+    user: "Ana Martínez",
+    description: '"Matías fue clave para llevar a producción nuestro MVP en tiempo récord. Su enfoque ágil y compromiso destacan."',
+    image: "https://unavatar.io/github/anamartinez",
+    job: "Product Owner"
+  },
+  {
+    id: 2,
+    user: "Carlos Gómez",
+    description: '"Increíble capacidad de análisis funcional y visión de producto. Siempre aporta claridad a lo complejo."',
+    image: "https://unavatar.io/github/carlos",
+    job: "Analista de Negocio"
+  },
+  {
+    id: 3,
+    user: "Lucía Fernández",
+    description: '"Matías combina lo técnico con lo humano. Excelente profesional y mejor persona."',
+    image: "https://unavatar.io/github/lucia",
+    job: "Scrum Master"
+  },
+  {
+    id: 4,
+    user: "Diego Ramírez",
+    description: '"Gran capacidad para resolver problemas técnicos y liderar equipos multidisciplinarios."',
+    image: "https://unavatar.io/github/diegoramirez",
+    job: "Tech Lead"
+  },
+  {
+    id: 5,
+    user: "Valentina Ruiz",
+    description: '"Siempre dispuesto a colaborar y aportar valor. Matías entiende tanto del negocio como de la tecnología."',
+    image: "https://unavatar.io/github/valentinarnz",
+    job: "UX Researcher"
+  },
+  {
+    id: 6,
+    user: "Martín López",
+    description: '"Con Matías todo fluye. Es claro, ordenado y comprometido con los objetivos del equipo."',
+    image: "https://unavatar.io/github/martinlopez",
+    job: "Scrum Master"
+  },
+  {
+    id: 7,
+    user: "Florencia Castro",
+    description: '"Su código es prolijo y su análisis siempre anticipa escenarios posibles. Un verdadero fullstack."',
+    image: "https://unavatar.io/github/florcastro",
+    job: "Desarrolladora Fullstack"
+  },
+  {
+    id: 8,
+    user: "Julián Torres",
+    description: '"Matías aportó una arquitectura clara y escalable desde el primer día. Muy recomendable."',
+    image: "https://unavatar.io/github/juliantorres",
+    job: "Arquitecto de Software"
+  },
+  {
+    id: 9,
+    user: "Camila Rojas",
+    description: '"Gracias a su enfoque funcional, logramos mejorar la experiencia de usuario y reducir bugs."',
+    image: "https://unavatar.io/github/camilarojas",
+    job: "QA & UX Analyst"
+  },
+  {
+    id: 10,
+    user: "Federico Navarro",
+    description: '"Su liderazgo técnico nos permitió cumplir los deadlines sin comprometer calidad."',
+    image: "https://unavatar.io/github/fednavarro",
+    job: "CTO"
+  }
+]
+---
+
+<section class="py-16 px-4 bg-white dark:bg-slate-900">
+  <div class="max-w-4xl mx-auto text-center mb-12">
+    <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Testimonios</h2>
+    <p class="mt-4 text-slate-600 dark:text-slate-300">
+      Personas con las que trabajé comparten su experiencia.
+    </p>
+  </div>
+
+  <div>
+    <Carousel testimonials={testimonials} autoPlay client:only="react" />
+  </div>
+</section>

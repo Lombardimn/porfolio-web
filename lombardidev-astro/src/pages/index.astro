@@ -1,13 +1,22 @@
 ---
 import avatar from '@/assets/images/avatar.png';
 import Features from '@/components/layout/Features.astro';
+import Gallery from '@/components/layout/Gallery.astro';
+import Grid from '@/components/layout/Grid.astro';
 import Hero from '@/components/layout/Hero.astro';
+import Testimonials from '@/components/layout/Testimonials.astro';
 import CallToAction from '@/components/ui/CallToAction.astro';
+import Preview from '@/components/ui/Preview.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const works = (await getCollection('works')).sort(
+	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+).slice(0, 4)
 ---
 
 <BaseLayout>
-	<main class="flex-1 mt-24 max-w-7xl mx-auto">
+	<main class="container flex-1 mt-24 max-w-7xl mx-auto">
 		<Hero
 			title="Soy Matias Lombardi"
 			subtitle="Hola a todos 👋!"
@@ -35,9 +44,29 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 		</Hero>
 
 		<Features />
+
+		<Gallery
+			title="Mis proyectos"
+			description="Echa un vistazo a algunos de mis trabajos destacados."	
+			class="mx-4 py-16"
+		>
+			<article>
+			<Grid variant='offset'>
+				{
+					works.map((work) => (
+						<li id={work.slug} >
+							<Preview works={work} />
+						</li>
+					))
+				}
+				</Grid>
+			</article>
+		</Gallery>
+
+		<Testimonials />
+
+
 		<div class="bg-red-500">
-			<p>Projects</p>
-			<p>PeopleTAM</p>
 			<p>CallToAction</p>
 		</div>
 
