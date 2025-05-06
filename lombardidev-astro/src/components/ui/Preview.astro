@@ -19,5 +19,6 @@ const { data, slug } = Astro.props.works;
     loading="lazy" 
 		decoding="async"
     class="col-start-1 row-start-1 col-end-3 row-end-3 w-full h-full object-cover"
+    transition:name={`image-${slug}-projects`}
   >
 </a>

@@ -1,12 +1,12 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Pill from "@/components/ui/Pill.astro";
-import { getCollection, render } from "astro:content";
+import { getCollection, render, type CollectionEntry } from "astro:content";
 import { formatDate } from "@/scripts/formatDate";
 
 
 export async function getStaticPaths() {
-  const works = await getCollection('works')
+  const works: CollectionEntry<'works'>[] = await getCollection('works')
 
   return works.map((work) => ({
     params: { slug: work.slug },
@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 }
 
 const { work } = Astro.props
-const { data } = work
+const { data, slug } = work
 const { title, description, publishDate, img, repo, demo, status, tags } = data
 
 const { Content } = await render(work)
@@ -42,7 +42,7 @@ const publishDateFormated = formatDate(publishDate)
         </div>
       </div>
 
-      <img src={img} alt={title} class="rounded-2xl shadow-md" />
+      <img src={img} alt={title} class="rounded-2xl shadow-md" transition:name={`image-${slug}-projects`} />
     </section>
 
     <section class="flex flex-col items-center mx-4 py-4">

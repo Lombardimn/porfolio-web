@@ -1,76 +1,49 @@
 ---
 import { Carousel } from "../ui/client/Carousel"
+import { PROFILE_URL } from "astro:env/server"
 
 const testimonials = [
   {
     id: 1,
     user: "Ana Martínez",
-    description: '"Matías fue clave para llevar a producción nuestro MVP en tiempo récord. Su enfoque ágil y compromiso destacan."',
-    image: "https://unavatar.io/github/anamartinez",
+    description: '"Gran capacidad para resolver problemas técnicos y liderar equipos multidisciplinarios."',
+    image: `${PROFILE_URL}/atinez`,
     job: "Product Owner"
   },
   {
     id: 2,
     user: "Carlos Gómez",
     description: '"Increíble capacidad de análisis funcional y visión de producto. Siempre aporta claridad a lo complejo."',
-    image: "https://unavatar.io/github/carlos",
+    image: `${PROFILE_URL}/carlosandres11`,
     job: "Analista de Negocio"
   },
   {
     id: 3,
     user: "Lucía Fernández",
     description: '"Matías combina lo técnico con lo humano. Excelente profesional y mejor persona."',
-    image: "https://unavatar.io/github/lucia",
+    image: `${PROFILE_URL}/lucfercas`,
     job: "Scrum Master"
   },
   {
-    id: 4,
-    user: "Diego Ramírez",
-    description: '"Gran capacidad para resolver problemas técnicos y liderar equipos multidisciplinarios."',
-    image: "https://unavatar.io/github/diegoramirez",
-    job: "Tech Lead"
-  },
-  {
     id: 5,
-    user: "Valentina Ruiz",
+    user: "Valentina Loaiza",
     description: '"Siempre dispuesto a colaborar y aportar valor. Matías entiende tanto del negocio como de la tecnología."',
-    image: "https://unavatar.io/github/valentinarnz",
+    image: `${PROFILE_URL}/valenlzmj`,
     job: "UX Researcher"
   },
   {
     id: 6,
     user: "Martín López",
     description: '"Con Matías todo fluye. Es claro, ordenado y comprometido con los objetivos del equipo."',
-    image: "https://unavatar.io/github/martinlopez",
+    image: `${PROFILE_URL}/MigueMLM`,
     job: "Scrum Master"
   },
   {
     id: 7,
-    user: "Florencia Castro",
+    user: "Florencia Schmidt",
     description: '"Su código es prolijo y su análisis siempre anticipa escenarios posibles. Un verdadero fullstack."',
-    image: "https://unavatar.io/github/florcastro",
+    image: `${PROFILE_URL}/mflorschmidt`,
     job: "Desarrolladora Fullstack"
-  },
-  {
-    id: 8,
-    user: "Julián Torres",
-    description: '"Matías aportó una arquitectura clara y escalable desde el primer día. Muy recomendable."',
-    image: "https://unavatar.io/github/juliantorres",
-    job: "Arquitecto de Software"
-  },
-  {
-    id: 9,
-    user: "Camila Rojas",
-    description: '"Gracias a su enfoque funcional, logramos mejorar la experiencia de usuario y reducir bugs."',
-    image: "https://unavatar.io/github/camilarojas",
-    job: "QA & UX Analyst"
-  },
-  {
-    id: 10,
-    user: "Federico Navarro",
-    description: '"Su liderazgo técnico nos permitió cumplir los deadlines sin comprometer calidad."',
-    image: "https://unavatar.io/github/fednavarro",
-    job: "CTO"
   }
 ]
 ---
