@@ -7,7 +7,7 @@ import NavContainer from "../header/NavContainer.astro";
 /* Items para el menu */
 const menuLinks: Array<{ label: string; href: string }> = [
   { label: "Inicio", href: "/" },
-  { label: "Proyectos", href: "/work" },
+  { label: "Proyectos", href: "/projects" },
   { label: "Sobre Mí", href: "/about" },
   { label: "Contacto", href: "/contact" },
 ];
@@ -30,14 +30,14 @@ const socialLinks: Array<{ label: string; href: string; icon: string }> = [
       <menu-button menu-target="menu-content">
           <button
             class:list={[
-              "relative flex items-center justify-center rounded-full p-2 text-2xl transition-colors bg-radial text-slate-900 shadow-sm shadow-gray-700/30",
-              "from-gray-200 hover:from-teal-700/30 dark:hover:from-gray-700",
+              "relative z-20 flex items-center justify-center rounded-full p-2 text-2xl transition-colors bg-radial text-slate-900 shadow-sm shadow-gray-700/30",
+              "from-gray-100 to-slate-200 hover:from-gray-700/30",
               "dark:text-stone-50 dark:from-gray-600 dark:to-gray-800 to-70%"  
             ]}
             aria-expanded="false"
           >
             <span class="sr-only">Menú</span>
-            <i class="ph-duotone ph-list"></i>
+            <i class="ph ph-list"></i>
             <span class="p"></span>
           </button>
       </menu-button>

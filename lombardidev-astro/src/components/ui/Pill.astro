@@ -1,0 +1,11 @@
+---
+interface Props {
+  colors?: string;
+}
+
+const { colors } = Astro.props as Props;
+---
+
+<div class={`flex py-1 px-4 gap-2 rounded-full text-medium leading-snug whitespace-nowrap border-2 border-solid ${colors}`} >
+  <slot />
+</div>

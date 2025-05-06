@@ -1,0 +1,56 @@
+---
+interface Props {
+  title?: string
+  description?: string
+  image?: string
+  content?: string
+  url?: string
+  domain?: string
+}
+
+const {
+  title = 'Porfolio Web | @lombardidev',
+  description = 'Porfolio Web de Lombardi Matias',
+  image = '',
+  content = 'Marca descriptiva de @lombardidev',
+  url = '',
+  domain = ''
+} = Astro.props
+---
+
+<head>
+  {/** Primary Meta Tags */}
+  <title>{title}</title>
+  <meta name="title" content={title} />
+  <meta name="description" content={description} />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content={Astro.generator} />
+
+  {/** Open Graph / Facebook */}
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={url} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={image} />
+  <meta property="og:image:alt" content={content} />
+
+  {/** Twitter */}
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content={url} />
+  <meta property="twitter:domain" content={domain} />
+  <meta property="twitter:title" content={title} />
+  <meta property="twitter:description" content={description} />
+  <meta property="twitter:image" content={image} />
+  <meta property="twitter:image:alt" content={content} />
+  
+  {/** Canonical URL */}
+  <link rel="canonical" href={url} />
+
+  {/** Links / CSS / Icons  */}
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/duotone/style.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+
+</head>
