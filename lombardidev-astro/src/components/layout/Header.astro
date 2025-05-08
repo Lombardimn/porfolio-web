@@ -21,9 +21,9 @@ const socialLinks: Array<{ label: string; href: string; icon: string }> = [
 
 <header class="fixed top-0 left-0 w-full z-50">
   <div>
-    <section class="flex flex-row items-center justify-between h-20 px-4 pt-2 backdrop-blur-md shadow-md">
+    <section class="flex flex-row items-center justify-between h-20 px-4 pt-2 backdrop-blur-md shadow-md bg-stone-50/70 dark:bg-slate-900/70">
       <a href="/">
-        <img src={astroLogo.src} alt="Logo del sitio" class="w-24 h-auto" />
+        <img src={astroLogo.src} alt="Logo del sitio" class="w-24 h-auto " />
       </a>
 
       {/** Menu para dispositivos móviles */}
@@ -32,7 +32,7 @@ const socialLinks: Array<{ label: string; href: string; icon: string }> = [
             class:list={[
               "relative z-20 flex items-center justify-center rounded-full p-2 text-2xl transition-colors bg-radial text-slate-900 shadow-sm shadow-gray-700/30",
               "hover:from-gray-100 hover:to-slate-200 dark:hover:from-gray-800 dark:hover:to-gray-700",
-              "dark:text-stone-50 dark:from-gray-600 dark:to-gray-800 to-70%"  
+              "dark:text-stone-50 dark:from-gray-600 dark:to-gray-700 to-70%"  
             ]}
             aria-expanded="false"
           >

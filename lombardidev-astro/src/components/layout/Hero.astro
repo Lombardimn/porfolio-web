@@ -13,13 +13,14 @@ const { title, subtitle, description, align = 'center', reverse = false, class: 
 
 <section 
   id="hero"
-  class={`text-${align} ${className}`}>
+  class={`text-${align} ${className}`}
+>
   <div class={`space-y-2 flex flex-col ${reverse ? 'flex-col-reverse' : ''}`}>
-    <h2 class={`text-3xl font-semibold text-${align} text-teal-700`}>{subtitle}</h2>
+    <h2 class={`text-3xl font-semibold text-${align} text-teal-700 dark:text-teal-500`}>{subtitle}</h2>
     <h1 class={`text-5xl font-bold text-${align}`}>{title}</h1>
   </div>
   <div>
-    <p class={`text-${align} font-light text-xl text-teal-700 text-shadow-2xs shadow-teal-500`}>{description}</p>
+    <p class={`text-${align} font-light text-xl text-teal-700 dark:text-teal-500 text-shadow-2xs shadow-teal-500`}>{description}</p>
   </div>
 
   <div>

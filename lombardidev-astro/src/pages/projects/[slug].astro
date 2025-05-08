@@ -4,6 +4,13 @@ import Pill from "@/components/ui/Pill.astro";
 import { getCollection, render, type CollectionEntry } from "astro:content";
 import { formatDate } from "@/scripts/formatDate";
 
+/** Iconos */
+import NextJS from "@/components/stack/NextJS.astro";
+import React from "@/components/stack/React.astro";
+import NodeJS from "@/components/stack/NodeJS.astro";
+import PostgreSQL from "@/components/stack/PostgreSQL.astro";
+import Typescript from "@/components/stack/Typescript.astro";
+import TailwindCSS from "@/components/stack/TailwindCSS.astro";
 
 export async function getStaticPaths() {
   const works: CollectionEntry<'works'>[] = await getCollection('works')
@@ -21,6 +28,42 @@ const { title, description, publishDate, img, repo, demo, status, tags } = data
 const { Content } = await render(work)
 
 const publishDateFormated = formatDate(publishDate)
+
+
+const TAGS = {
+  NEXT: {
+    name: 'Next.js',
+    class: 'hover:bg-gray-200',
+    icon: NextJS
+  },
+  NODE:{
+    name: 'Node.js',
+    class: 'hover:bg-green-100',
+    icon: NodeJS
+  },
+  POSTGRESQL: {
+    name: 'PostgreSQL',
+    class: 'hover:bg-sky-100',
+    icon: PostgreSQL
+  },
+  REACT: {
+    name: 'React',
+    class: 'hover:bg-blue-100',
+    icon: React
+  },
+  TAILWINDCSS:{
+    name: 'TailwindCSS',
+    class: 'hover:bg-cyan-100',
+    icon: TailwindCSS
+  },
+  TYPESCRIPT: {
+    name: 'TypeScript',
+    class: 'hover:bg-blue-200',
+    icon: Typescript
+  }
+} as const
+
+type TagKey = keyof typeof TAGS;
 ---
 
 <BaseLayout title={`${title} | @lombardidev`} description={description} >
@@ -48,23 +91,30 @@ const publishDateFormated = formatDate(publishDate)
     <section class="flex flex-col items-center mx-4 py-4">
 
       <div class="flex gap-10 justify-evenly items-center pb-4">
-        <a href={repo} class="py-2 px-3 border-2 border-solid border-slate-900/30 rounded-xl transform transition-all duration-300 ease-in-out hover:bg-teal-600/30 hover:text-teal-700 hover:scale-125">
+        <a href={repo} class="py-2 px-3 border-2 border-solid border-slate-900/30 shadow-md rounded-xl transform transition-all duration-300 ease-in-out hover:bg-teal-600/30 hover:text-teal-700 hover:scale-125">
           <i class="ph-duotone ph-github-logo" style="font-size: 24px;"></i>
         </a>
-        <a href={demo} class="py-2 px-3 border-2 border-solid border-slate-900/30 rounded-xl transform transition-all duration-300 ease-in-out hover:bg-teal-600/30 hover:text-teal-700 hover:scale-125">
+        <a href={demo} class="py-2 px-3 border-2 border-solid border-slate-900/30 shadow-md rounded-xl transform transition-all duration-300 ease-in-out hover:bg-teal-600/30 hover:text-teal-700 hover:scale-125">
           <i class="ph-duotone ph-devices" style="font-size: 24px;"></i>
         </a>
       </div>
     </section>
 
     <section class="pb-8 mx-4">
-      <div class="flex flex-wrap gap-2">
+      <h2 class="text-2xl font-semibold mb-4">Stack usados</h2>
+      <div class="flex flex-wrap justify-center items-center gap-2 my-4">
         {
-          tags.map((tag) => (
-            <Pill colors="text-slate-50 border-teal-800 bg-gradient-to-bl from-teal-600 via-teal-700 to-teal-900 to-75%">
-              {tag}
-            </Pill>
-          ))
+          tags
+            .filter((tag): tag is TagKey => tag in TAGS)
+            .map(tag => {
+              const TagIcon = TAGS[tag].icon
+              return (
+                <Pill colors={TAGS[tag].class} >
+                  <TagIcon class="w-10 h-10"/>
+                  {TAGS[tag].name}
+                </Pill>
+              )
+            })
         }
       </div>
     </section>

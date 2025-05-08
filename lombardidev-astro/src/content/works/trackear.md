@@ -6,7 +6,7 @@ status: Finalizado
 img: /img-projects/trackear.png
 repo: https://github.com/Lombardimn/trackear
 demo: https://trackear.vercel.app/
-tags: [Next.js, Node.js, PostgreSQL, TypeScript, Tailwind]
+tags: [NEXT, NODE, POSTGRESQL, TYPESCRIPT, TAILWINDCSS]
 ---
 
 ## Descripción breve

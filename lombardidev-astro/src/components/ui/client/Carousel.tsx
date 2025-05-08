@@ -58,12 +58,10 @@ export const Carousel = ({ testimonials, showControls, autoPlay }: CarouselProps
 
   return (
     <>
-      <div className="relative h-48 flex flex-col pt-8 pb-2 px-6 border border-solid border-slate-900/10 rounded-2xl shadow-md bg-slate-50">
+      <div className="relative h-48 flex flex-col pt-8 pb-2 px-6 border border-solid border-slate-900/10 rounded-2xl shadow-md bg-slate-50 dark:bg-slate-950">
         <div className="absolute -top-8 transform -translate-x-1/2 left-1/2">
           <img 
             src={selectedImage}
-            loading="lazy" 
-            decoding="async" 
             alt="perfil"
             onLoad={() => setLoaded(true)} 
             className={`w-16 h-16 rounded-full shadow-md transition-opacity duration-1000 ease-in-out ${loaded ? 'opacity-100' : 'opacity-0'}`}
@@ -71,12 +69,12 @@ export const Carousel = ({ testimonials, showControls, autoPlay }: CarouselProps
         </div>
 
         <div className="pt-2 pb-4 px-1 font-light text-center text-sm w-full border-b border-solid border-slate-900/10">
-          <p className="leading-relaxed text-slate-900">{data.description}</p>
+          <p className="leading-relaxed text-slate-900 dark:text-slate-50">{data.description}</p>
         </div>
 
         <div className="flex flex-col gap-0.5 pt-2 text-center">
           <p className="font-semibold text-md">{data.user}</p>
-          <span className="text-sm text-teal-700 font-light text-shadow-2xs shadow-teal-500">{data.job}</span>
+          <span className="text-sm text-teal-700 dark:text-teal-500 font-light text-shadow-2xs shadow-teal-500">{data.job}</span>
         </div>
       </div>
 
@@ -106,12 +104,12 @@ export const Carousel = ({ testimonials, showControls, autoPlay }: CarouselProps
         
         {
           testimonials.length > 1 &&
-          <div className="h-6 flex flex-row items-end justify-center gap-2 bg-amber-50/30">
+          <div className="h-6 flex flex-row items-end justify-center gap-2">
             {
               testimonials.map((_, index) => (
                 <div
                   key={index}
-                  className={`w-2 h-2 rounded-full ${index === selectedIndex ? "bg-teal-500 transform scale-125 transition-transform duration-300 ease-in-out" : "bg-slate-400"}`}
+                  className={`w-2 h-2 rounded-full ${index === selectedIndex ? "bg-teal-500 dark:bg-teal-300 transform scale-125 transition-transform duration-300 ease-in-out" : "bg-slate-400"}`}
                 />
               ))
             }
