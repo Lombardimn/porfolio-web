@@ -1,5 +1,5 @@
 ---
-import astroLogo from "@/assets/icons/astro-logo-light-gradient.svg";
+import astroLogo from "@/assets/images/logo-v6.png";
 import ThemeToggle from "@/components/ui/ThemeToggle.astro";
 import NavContent from "../header/NavContent.astro";
 import NavContainer from "../header/NavContainer.astro";
@@ -9,7 +9,7 @@ const menuLinks: Array<{ label: string; href: string }> = [
   { label: "Inicio", href: "/" },
   { label: "Proyectos", href: "/projects" },
   { label: "Sobre Mí", href: "/about" },
-  { label: "Contacto", href: "/contact" },
+  { label: "Contacto", href: "/work-with-me" },
 ];
 
 /** Links para redes sociales */
@@ -31,7 +31,7 @@ const socialLinks: Array<{ label: string; href: string; icon: string }> = [
           <button
             class:list={[
               "relative z-20 flex items-center justify-center rounded-full p-2 text-2xl transition-colors bg-radial text-slate-900 shadow-sm shadow-gray-700/30",
-              "from-gray-100 to-slate-200 hover:from-gray-700/30",
+              "hover:from-gray-100 hover:to-slate-200 dark:hover:from-gray-800 dark:hover:to-gray-700",
               "dark:text-stone-50 dark:from-gray-600 dark:to-gray-800 to-70%"  
             ]}
             aria-expanded="false"

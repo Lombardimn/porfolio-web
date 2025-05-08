@@ -1,0 +1,14 @@
+---
+import { iconPath } from "@/utils"
+
+
+interface Props {
+  icon: string;
+  class?: string;
+}
+
+const { icon = 'null', class: className } = Astro.props as Props;
+---
+<div class={className}>
+  { icon && <Fragment set:html={iconPath[icon as keyof typeof iconPath]} /> }
+</div>

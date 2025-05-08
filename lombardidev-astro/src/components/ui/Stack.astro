@@ -1,0 +1,29 @@
+---
+import Icon from "./Icon.astro"
+
+const stack = [
+  { name: "React", icon: "react" },
+  { name: "Astro", icon: "astro" },
+  { name: "Next", icon: "next" },
+  { name: "Node", icon: "node" },
+  { name: "Tailwind", icon: "tailwind" },
+  { name: "Typescript", icon: "typescript" },
+  { name: "Git", icon: "git" },
+  { name: "Figma", icon: "figma" },
+]
+---
+
+<div class="flex items-center gap-4 my-12 overflow-x-auto">
+  {
+    stack.map(({name, icon}) => (
+      <div class="flex flex-col items-center justify-center gap-2 h-28">
+        {
+          icon && <Icon icon={icon} class="w-16 h-16 flex items-center justify-center"/>
+        }
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mb-2 dark:bg-gray-700 dark:text-gray-300">
+          {name}
+        </span>
+      </div>
+    ))
+  }
+</div>

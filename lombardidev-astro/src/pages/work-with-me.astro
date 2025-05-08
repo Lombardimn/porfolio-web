@@ -1,0 +1,27 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Contact from '@/components/layout/Contact.astro';
+import Hero from '@/components/layout/Hero.astro';
+import ChannelMatrix from '@/components/ui/client/ChannelMatrix';
+
+interface Props {
+  title: string
+  description: string
+}
+
+const { title = 'Trabajemos juntos | @lombardidev', description = 'Como puedes contactarme.' } = Astro.props
+---
+
+<BaseLayout title={title} description={description} >
+  <section class="container flex-1 pt-24 max-w-7xl mx-auto">
+    <Hero
+      title="Trabajemos juntos"
+      description="Construyamos juntos algo increíble"
+      align="start"
+      class="px-4 flex flex-col space-y-4"
+    >
+
+    <ChannelMatrix client:only="react" />
+    
+  </section> 
+</BaseLayout>

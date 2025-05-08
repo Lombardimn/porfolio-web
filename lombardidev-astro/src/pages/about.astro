@@ -1,14 +1,88 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from "@/components/layout/Hero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import heroImage from "@/assets/images/working.webp";
+import ExperienceContainer from "@/components/about/ExperienceContainer.astro";
+import ExperienceItem from "@/components/about/ExperienceItem.astro";
+import ProfileHistory from "@/components/about/ProfileHistory.astro";
+import Contact from "@/components/layout/Contact.astro";
+import Icon from "@/components/ui/Icon.astro";
+import Stack from "@/components/ui/Stack.astro";
 
 interface Props {
-  title: string
-  description: string
+  title: string;
+  description: string;
 }
 
-const { title = 'Sobre Mí | @lombardidev', description = 'Detalle de mi experiencia y educación profesional.' } = Astro.props
+const {
+  title = "Sobre Mí | @lombardidev",
+  description = "Detalle de mi experiencia y educación profesional.",
+} = Astro.props;
+
+const experience = [
+  {
+    date: "2023- Actualidad",
+    title: "Product Owner",
+    business: "Kinetic Corp.",
+    description: "Lideró la evolución de un sistema de postventa en el sector automotor, enfocándose en la optimización de procesos y la gestión estratégica del producto.",
+  },
+  {
+    date: "2021 - 2023",
+    title: "Analista Funcional",
+    business: "Vippinn",
+    description: "Gestioné la administración de recursos y documentación de proyectos bajo la metodología Scrum, procesos de testing funcional y de aceptación con coordinando con los equipos de desarrollo y negocio.",
+  },
+  {
+    date: "2018 - 2021",
+    title: "Analista de Sistemas",
+    business: "Indra S.A.",
+    description: "Brindé consultoría a empresas multinacionales en la implementación, optimización y mantenimiento del módulo SAP SRM. ",
+  },
+]
 ---
 
-<BaseLayout title={title} description={description} >
-	<h1>about</h1>
+<BaseLayout title={title} description={description}>
+  <main class="container flex-1 mt-24 max-w-7xl mx-auto">
+    <Hero
+      title="Sobre Mí"
+      description="Detalle de mi experiencia y educación profesional."
+      align="start"
+      class="px-4 flex flex-col space-y-4"
+    >
+      <div class="flex flex-col gap-4 mb-4">
+        <img
+          src={heroImage.src}
+          alt="Matias Lombardi, sonriendo, de fondo su mundo resumido en un escritorio personalizado"
+          class="w-auto h-auto rounded-md drop-shadow-2xl shadow-teal-700"
+        />
+      </div>
+    </Hero>
+
+    <section class="py-4 mx-4">
+      <p class="text-lg text-gray-700 dark:text-gray-300">
+        Soy <strong>Matias</strong>, Analista Funcional y Desarrollador Full Stack Web. Disfruto conectar el mundo técnico con la visión de negocio para crear soluciones que realmente sumen valor.
+        Trabajo con tecnologías modernas del ecosistema web y tengo experiencia integrando sistemas, diseñando arquitectura y construyendo productos desde cero.
+      </p>
+    </section>
+     
+    <section class="py-4 mx-4">
+      <h2 class="mb-4 text-3xl font-bold text-slate-900 dark:text-white text-left">Experiencia</h2>
+      <ExperienceContainer class="mx-4 flex flex-col">
+        {
+          experience.map((exp) => (
+            <ExperienceItem
+              date={exp.date}
+              title={exp.title}
+              business={exp.business}
+              description={exp.description}
+            />
+          ))
+        }
+      </ExperienceContainer>
+      </section>
+
+      <ProfileHistory />
+
+      <Contact />
+  </main>
 </BaseLayout>

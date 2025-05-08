@@ -1,0 +1,68 @@
+---
+const timeline = [
+  {
+    title: "Primeros pasos",
+    description:
+      "Comencé con el hardware, explorando el lado físico de la tecnología mientras vivía en Córdoba.",
+    icon: "💻",
+  },
+  {
+    title: "Mi primer sistema",
+    description:
+      "En la industria manufacturera, desarrollé una herramienta en VBA que despertó mi pasión por la programación.",
+    icon: "🛠️",
+  },
+  {
+    title: "Cambio de rumbo",
+    description:
+      "Decidí estudiar Ingeniería en Sistemas y dejar atrás mi trabajo anterior para enfocarme en el desarrollo.",
+    icon: "🎓",
+  },
+  {
+    title: "Experiencia en proyectos SAP",
+    description:
+      "Apliqué mis conocimientos desde temprano, combinando análisis funcional y visión técnica.",
+    icon: "📊",
+  },
+  {
+    title: "Desarrollador Fullstack",
+    description:
+      "Hoy disfruto crear soluciones eficientes y escalables que resuelven problemas reales.",
+    icon: "🚀",
+  },
+];
+---
+
+<section class="bg-white dark:bg-gray-900">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="py-10 relative">
+      <h2 class="text-3xl font-bold text-left text-gray-800 dark:text-white">
+        ¿Cómo llegue aquí?
+      </h2>
+    </div>
+    <div class="relative">
+      <ul id="cards">
+        {
+          timeline.map((item, index) => (
+            <li
+              id={`card_${index}`}
+              class="card list-none mb-4 ml-2 border border-solid border-slate-900/10 rounded-2xl p-4 shadow-md shadow-slate-900/10 bg-slate-50"
+            >
+              <div class="flex flex-col">
+                <div class="flex items-center mb-2">
+                  <div class="text-2xl">{item.icon}</div>
+                  <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 ml-3">
+                    {item.title}
+                  </h3>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300">
+                  {item.description}
+                </p>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>
