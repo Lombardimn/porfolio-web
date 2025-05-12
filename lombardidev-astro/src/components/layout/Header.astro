@@ -19,11 +19,11 @@ const socialLinks: Array<{ label: string; href: string; icon: string }> = [
 ];
 ---
 
-<header class="fixed top-0 left-0 w-full z-50">
-  <div>
-    <section class="flex flex-row items-center justify-between h-20 px-4 pt-2 backdrop-blur-md shadow-md bg-stone-50/70 dark:bg-slate-900/70">
+<header class="fixed top-0 left-0 w-full z-50 shadow-md backdrop-blur-md bg-stone-50/70 dark:bg-slate-900/70">
+  <div class="md:max-w-7xl md:mx-auto md:flex md:flex-row md:items-center md:justify-between">
+    <section class="flex flex-row items-center justify-between h-20 px-4 pt-2">
       <a href="/">
-        <img src={astroLogo.src} alt="Logo del sitio" class="w-24 h-auto " />
+        <img src={astroLogo.src} alt="Logo del sitio" class="w-24 md:w-40 h-auto" />
       </a>
 
       {/** Menu para dispositivos móviles */}
@@ -32,7 +32,8 @@ const socialLinks: Array<{ label: string; href: string; icon: string }> = [
             class:list={[
               "relative z-20 flex items-center justify-center rounded-full p-2 text-2xl transition-colors bg-radial text-slate-900 shadow-sm shadow-gray-700/30",
               "hover:from-gray-100 hover:to-slate-200 dark:hover:from-gray-800 dark:hover:to-gray-700",
-              "dark:text-stone-50 dark:from-gray-600 dark:to-gray-700 to-70%"  
+              "dark:text-stone-50 dark:from-gray-600 dark:to-gray-700 to-70%",
+              "md:hidden",
             ]}
             aria-expanded="false"
           >
@@ -43,12 +44,13 @@ const socialLinks: Array<{ label: string; href: string; icon: string }> = [
       </menu-button>
 
     </section>
-    <section id="menu-content" class="hidden md:block pb-4 shadow-sm shadow-gray-700/30 dark:shadow-white/30 dark:bg-gray-950 bg-stone-50">
-      <NavContainer class="dark:last:shadow-white/30 dark:last:shadow-sm">
+    <section id="menu-content" class="hidden pb-4 shadow-sm shadow-gray-700/30 dark:shadow-white/30 dark:bg-gray-950 bg-stone-50 md:pb-0 md:shadow-none md:dark:shadow-none md:bg-transparent md:dark:bg-transparent md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:w-full">
+      <div class="hidden md:block"></div>
+      <NavContainer class="dark:last:shadow-white/30 dark:last:shadow-sm md:flex md:flex-row md:justify-center md:items-center md:px-4 md:flex-grow md:dark:last:shadow-none">
         <NavContent links={menuLinks} />
-        <span class="block w-11/12 h-0.5 mx-auto border-b-[0.5px] border-gray-700/30"></span>
+        <span class="block w-11/12 h-0.5 mx-auto border-b-[0.5px] border-gray-700/30 md:hidden"></span>
       </NavContainer>
-      <div class="flex flex-row justify-between items-center pt-4 md:divide-x md:divide-white">
+      <div class="flex flex-row justify-end items-center pt-4 md:gap-3 md:divide-x md:dark:divide-white md:divide-slate-900">
         <NavContainer class="flex flex-row gap-1 px-4">
           <NavContent links={socialLinks} alternative />
         </NavContainer>

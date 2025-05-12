@@ -1,5 +1,5 @@
 ---
-import avatar from '@/assets/images/avatar.png';
+import avatar from '@/assets/images/avatar2.png';
 import Contact from '@/components/layout/Contact.astro';
 import Features from '@/components/layout/Features.astro';
 import Gallery from '@/components/layout/Gallery.astro';
@@ -27,21 +27,21 @@ const { title , description } = Astro.props
 ---
 
 <BaseLayout title={title} description={description} >
-	<main class="container flex-1 mt-24 max-w-7xl mx-auto">
+	<main class="container flex-1 mt-32 md:mt-24">
 		<Hero
 			title="Soy Matias Lombardi"
 			subtitle="Hola a todos 👋!"
 			description="Product Owner & Fullstack Developer"
 			align="start"
-			class="px-4 flex flex-col space-y-4"
+			class="px-4 flex flex-col space-y-4 pb-10 md:flex-row md:items-center md:justify-evenly md:pb-0 md:h-screen"
 		>
-			<div class="flex flex-col gap-4 mb-4">
+			<div class="flex flex-col gap-4 pt-6 mb-6 items-center">
 				<img 
 					src={avatar.src} 
 					alt="Matias Lombardi, sonriendo, de fondo su mundo resumido en un escritorio personalizado"
-					class="w-auto h-auto rounded-xl drop-shadow-2xl shadow-teal-700"
+					class="w-auto h-auto rounded-xl drop-shadow-2xl shadow-teal-700 md:w-3/4"
 				>
-				<div class="w-full mx-auto text-center">
+				<div class="w-full mx-auto text-center mt-8 md:hidden">
 					<CallToAction 
 						href="mailto:contactos@lombardidev.ar"
 						target="_blank"
@@ -59,7 +59,7 @@ const { title , description } = Astro.props
 		<Gallery
 			title="Mis proyectos"
 			description="Echa un vistazo a algunos de mis trabajos destacados."	
-			class="mx-4 py-16"
+			class="mx-4 py-16 md:h-screen md:pt-24 md:px-36"
 		>
 			<article>
 			<Grid variant='offset'>

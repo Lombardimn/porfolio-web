@@ -1,4 +1,6 @@
 ---
+import CallToAction from '../ui/CallToAction.astro';
+
 interface Props {
   title: string;
   subtitle?: string;
@@ -15,14 +17,25 @@ const { title, subtitle, description, align = 'center', reverse = false, class: 
   id="hero"
   class={`text-${align} ${className}`}
 >
-  <div class={`space-y-2 flex flex-col ${reverse ? 'flex-col-reverse' : ''}`}>
-    <h2 class={`text-3xl font-semibold text-${align} text-teal-700 dark:text-teal-500`}>{subtitle}</h2>
-    <h1 class={`text-5xl font-bold text-${align}`}>{title}</h1>
-  </div>
   <div>
-    <p class={`text-${align} font-light text-xl text-teal-700 dark:text-teal-500 text-shadow-2xs shadow-teal-500`}>{description}</p>
+    <div class={`space-y-2 flex flex-col md:space-y-3 ${reverse ? 'flex-col-reverse' : ''}`}>
+      <h2 class={`text-3xl font-semibold text-${align} text-teal-700 dark:text-teal-500 md:text-4xl`}>{subtitle}</h2>
+      <h1 class={`text-5xl font-bold text-${align} md:text-6xl`}>{title}</h1>
+      <div>
+        <p class={`text-${align} font-light text-xl text-teal-700 dark:text-teal-500 text-shadow-2xs shadow-teal-500 md:text-2xl`}>{description}</p>
+      </div>
+    </div>
+    <div class="hidden md:block mt-8">
+      <CallToAction 
+        href="mailto:contactos@lombardidev.ar"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="py-2 px-8 w-auto text-center rounded-full no-underline shadow-md text-slate-50 bg-gradient-to-r from-teal-700 via-green-500 to-teal-900"
+      >
+        Contactame
+      </CallToAction>
+    </div>
   </div>
-
   <div>
     <slot />
   </div>
