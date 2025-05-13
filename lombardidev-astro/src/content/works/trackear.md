@@ -2,7 +2,8 @@
 title: Trackear
 description: Controla tus ingresos y egresos de forma inteligente y segura.
 publishDate: 2025-04-16 18:00:00
-status: Finalizado
+status: Actualizando
+colorStatus: bg-violet-500
 img: /img-projects/trackear.png
 repo: https://github.com/Lombardimn/trackear
 demo: https://trackear.vercel.app/

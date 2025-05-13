@@ -6,11 +6,13 @@ import { formatDate } from "@/scripts/formatDate";
 
 /** Iconos */
 import NextJS from "@/components/stack/NextJS.astro";
+import NestJS from "@/components/stack/NestJS.astro";
 import React from "@/components/stack/React.astro";
 import NodeJS from "@/components/stack/NodeJS.astro";
 import PostgreSQL from "@/components/stack/PostgreSQL.astro";
 import Typescript from "@/components/stack/Typescript.astro";
 import TailwindCSS from "@/components/stack/TailwindCSS.astro";
+import AstroIcon from "@/components/stack/AstroLogo.astro";
 
 export async function getStaticPaths() {
   const works: CollectionEntry<'works'>[] = await getCollection('works')
@@ -23,7 +25,9 @@ export async function getStaticPaths() {
 
 const { work } = Astro.props
 const { data, slug } = work
-const { title, description, publishDate, img, repo, demo, status, tags } = data
+const { title, description, publishDate, img, repo, demo, status, colorStatus, tags } = data
+
+console.log(colorStatus)
 
 const { Content } = await render(work)
 
@@ -31,10 +35,20 @@ const publishDateFormated = formatDate(publishDate)
 
 
 const TAGS = {
+  ASTRO: {
+    name: 'Astro',
+    class: 'hover:bg-slate-100',
+    icon: AstroIcon
+  },
   NEXT: {
     name: 'Next.js',
     class: 'hover:bg-gray-200',
     icon: NextJS
+  },
+  NESTJS: {
+    name: 'NestJS',
+    class: 'hover:bg-red-200',
+    icon: NestJS
   },
   NODE:{
     name: 'Node.js',
@@ -67,7 +81,7 @@ type TagKey = keyof typeof TAGS;
 ---
 
 <BaseLayout title={`${title} | @lombardidev`} description={description} >
-  <main class="container flex-1 mt-24 max-w-7xl mx-auto">
+  <main class="container flex-1 mt-24 pb-24 max-w-7xl mx-auto">
     <section class="mx-4">
       <div class="flex justify-end items-center">
         <a href="/projects" class="transition-colors duration-300 ease-in-out hover:underline hover:text-teal-700">
@@ -80,7 +94,7 @@ type TagKey = keyof typeof TAGS;
       
       <div class="flex items-center justify-between py-1">
         <span class="font-light text-xs mx-2 text-slate-600">{publishDateFormated}</span>
-        <div class="bg-green-500 rounded-md border-[0.5px] border-solid border-slate-900/90">
+        <div class=`${colorStatus} rounded-md border-[0.5px] border-solid border-slate-900/90`>
           <p class="ml-4 px-1 py-0.5 text-xs rounded-e-md text-slate-50 bg-slate-900/80">{status}</p>
         </div>
       </div>

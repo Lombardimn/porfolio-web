@@ -1,12 +1,13 @@
 ---
 title: Weather Wise
 description: Una PWA (Progressive Web App) para consultar el clima de una ciudad, mediante la API de OpenWeather.
-publishDate: 2024-05-09 00:00:00
+publishDate: 2024-05-09 15:00:00
 status: Finalizado
+colorStatus: bg-green-500
 img: /img-projects/weather-wise.jpg
 repo: https://github.com/Lombardimn/weather-wise
 demo: https://lombardidev-weatherwise.netlify.app/
-tags: [API REST, Astro, PWA]
+tags: [ASTRO, TYPESCRIPT, TAILWINDCSS]
 ---
 
 ## Descripción breve
