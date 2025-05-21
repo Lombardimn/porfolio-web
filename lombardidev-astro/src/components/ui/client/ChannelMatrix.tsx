@@ -63,7 +63,7 @@ export default function ChannelMatrix() {
               <div 
                 key={idx}
                 onClick={opt.action}
-                className="rounded-2xl border-[0.5px] border-solid border-slate-900/10 bg-white shadow-sm hover:shadow-lg transition cursor-pointer hover:text-teal-700"
+                className="rounded-2xl border-[0.5px] border-solid border-slate-900/10 bg-white dark:bg-slate-900 shadow-sm hover:shadow-lg transition cursor-pointer hover:text-teal-500 hover:border-teal-500"
               >
                 <div className="p-4 flex flex-col gap-2 items-start">
                   {opt.icon}
@@ -84,7 +84,7 @@ export default function ChannelMatrix() {
               <div 
                 key={idx}
                 onClick={area.action}
-                className="rounded-2xl border-[0.5px] border-solid border-slate-900/10 bg-white shadow-sm hover:shadow-lg transition cursor-pointer hover:text-teal-700"
+                className="rounded-2xl border-[0.5px] border-solid border-slate-900/10 bg-white dark:bg-slate-900 shadow-sm hover:shadow-lg transition cursor-pointer hover:text-teal-500 hover:border-teal-500"
               >
                 <div className="p-4 space-y-3">
                   <div className="flex items-center gap-2">

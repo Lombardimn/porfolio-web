@@ -24,12 +24,11 @@ const works: CollectionEntry<'works'>[] = (
 ---
 
 <BaseLayout title={title} description={description} >
-  <main class="container flex-1 pt-24 max-w-7xl mx-auto bg-white">
+  <main class="container flex-1 pt-24 max-w-7xl mx-auto bg-white dark:bg-slate-900">
     <Hero
       title="Mis Proyectos"
       description="Listado completo de proyectos realizados"
       align="start"
-      reverse
       class="px-4 flex flex-col"
     >
       <article class="py-8">
@@ -44,7 +43,7 @@ const works: CollectionEntry<'works'>[] = (
         </Grid>
       </article>
     </Hero>
-    <div class="bg-slate-50">
+    <div class="bg-slate-50 dark:bg-slate-950">
       <Contact />
     </div>
   </main>
