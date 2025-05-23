@@ -10,9 +10,9 @@ const { data, slug } = Astro.props.works;
 
 <a 
   href={`/projects/${slug}`}
-  class="grid [grid-template:'auto_1fr/auto_1fr'] h-44 rounded-xl overflow-hidden shadow-md no-underline text-lg font-medium transition-colors duration-300 ease-in-out border border-solid border-transparent hover:border-slate-900 hover:scale-3d"
+  class="grid [grid-template:'auto_1fr/auto_1fr'] h-44 md:h-80 rounded-xl md:rounded-3xl overflow-hidden shadow-md no-underline text-lg font-medium transition-colors duration-300 ease-in-out border border-solid border-transparent hover:border-slate-900 hover:scale-3d"
 >
-  <span class="col-start-1 row-start-1 col-end-2 row-end-2 z-10 m-2 px-4 py-2 rounded-md bg-slate-900 text-slate-50">{data.title}</span>
+  <span class="col-start-1 row-start-1 col-end-2 row-end-2 z-10 m-2 px-4 py-2 rounded-md md:rounded-2xl bg-slate-900 text-slate-50">{data.title}</span>
   <img 
     src={data.img}
     alt={data.img || 'Imgen del proyecto.'}

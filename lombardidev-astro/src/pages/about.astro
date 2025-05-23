@@ -6,8 +6,6 @@ import ExperienceContainer from "@/components/about/ExperienceContainer.astro";
 import ExperienceItem from "@/components/about/ExperienceItem.astro";
 import ProfileHistory from "@/components/about/ProfileHistory.astro";
 import Contact from "@/components/layout/Contact.astro";
-import Icon from "@/components/ui/Icon.astro";
-import Stack from "@/components/ui/Stack.astro";
 
 interface Props {
   title: string;
@@ -42,47 +40,51 @@ const experience = [
 ---
 
 <BaseLayout title={title} description={description}>
-  <main class="container flex-1 mt-24 max-w-7xl mx-auto">
-    <Hero
-      title="Sobre Mí"
-      description="Detalle de mi experiencia y educación profesional."
-      align="start"
-      class="px-4 flex flex-col space-y-4"
-    >
-      <div class="flex flex-col gap-4 mb-4">
-        <img
-          src={heroImage.src}
-          alt="Matias Lombardi, sonriendo, de fondo su mundo resumido en un escritorio personalizado"
-          class="w-auto h-auto rounded-md drop-shadow-2xl shadow-teal-700"
-        />
-      </div>
-    </Hero>
+  <main class="container flex-1 mx-auto">
+    <section class="dark:bg-slate-900 bg-slate-50 pt-24">
+      <Hero
+        title="Sobre Mí"
+        description="Detalle de mi experiencia y educación profesional."
+        align="start"
+        class="px-4 flex flex-col space-y-4 max-w-7xl mx-auto"
+      >
+        <div class="flex flex-col gap-4 mb-4 md:pt-12">
+          <img
+            src={heroImage.src}
+            alt="Matias Lombardi, sonriendo, de fondo su mundo resumido en un escritorio personalizado"
+            class="w-auto h-auto rounded-md drop-shadow-2xl shadow-teal-700 md:w-4xl md:mx-auto"
+          />
+        </div>
+      </Hero>
 
-    <section class="py-4 mx-4">
-      <p class="text-lg text-gray-700 dark:text-gray-300">
-        Soy <strong>Matias</strong>, Analista Funcional y Desarrollador Full Stack Web. Disfruto conectar el mundo técnico con la visión de negocio para crear soluciones que realmente sumen valor.
-        Trabajo con tecnologías modernas del ecosistema web y tengo experiencia integrando sistemas, diseñando arquitectura y construyendo productos desde cero.
-      </p>
+      <div class="pt-4 md:pb-16 mx-4 md:max-w-7xl md:mx-auto">
+        <p class="text-lg text-gray-700 dark:text-gray-300 md:text-center md:w-4xl md:mx-auto">
+          Soy <strong>Matias</strong>, Analista Funcional y Desarrollador Full Stack Web. Disfruto conectar el mundo técnico con la visión de negocio para crear soluciones que realmente sumen valor.
+          Trabajo con tecnologías modernas del ecosistema web y tengo experiencia integrando sistemas, diseñando arquitectura y construyendo productos desde cero.
+        </p>
+      </div>
     </section>
      
-    <section class="py-4 mx-4">
-      <h2 class="mb-4 text-3xl font-bold text-slate-900 dark:text-white text-left">Experiencia</h2>
-      <ExperienceContainer class="mx-4 flex flex-col">
-        {
-          experience.map((exp) => (
-            <ExperienceItem
-              date={exp.date}
-              title={exp.title}
-              business={exp.business}
-              description={exp.description}
-            />
-          ))
-        }
-      </ExperienceContainer>
-      </section>
+    <section class="py-4 mx-4 md:py-16">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="mb-4 md:mb-16 text-3xl font-bold text-slate-900 dark:text-white text-left">Experiencia</h2>
+        <ExperienceContainer class="mx-4 flex flex-col">
+          {
+            experience.map((exp) => (
+              <ExperienceItem
+                date={exp.date}
+                title={exp.title}
+                business={exp.business}
+                description={exp.description}
+              />
+            ))
+          }
+        </ExperienceContainer>
+      </div>
+    </section>
 
-      <ProfileHistory />
+    <ProfileHistory />
 
-      <Contact />
+    <Contact />
   </main>
 </BaseLayout>

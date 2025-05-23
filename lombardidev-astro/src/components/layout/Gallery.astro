@@ -13,14 +13,14 @@ const { title, description, class: className } = Astro.props as Props;
 <section class={className}>
   <div class="my-4">
     <h2 class="text-3xl font-semibold pb-4">{title}</h2>
-    <p class="text-lg font-light">{description}</p>
+    <p class="text-lg font-light text-teal-500">{description}</p>
   </div>
 
   <div class="my-4">
     <slot />
   </div>
 
-  <div class="w-full mx-auto text-center">
+  <div class="w-full mx-auto text-center pt-8">
     <CallToAction
       href="/projects"
       class="py-2 px-8 w-auto text-center rounded-full no-underline shadow-md text-slate-50 bg-gradient-to-r from-teal-700 via-green-500 to-teal-900"

@@ -6,9 +6,10 @@ interface Props {
 const { variant } = Astro.props as Props;
 ---
 
-<ul class:list={[
-  'grid auto-rows-fr gap-4 list-none p-0 last:odd:col-span-2',
-  { offset: variant === 'offset', small: variant === 'small' }
-]}>
+<ul class=`grid auto-rows-fr list-none p-0 md:grid-cols-2 ${
+  variant === 'small'
+    ? 'gap-6 *:last:odd:col-span-2'
+    : 'gap-4 md:pb-28 md:*:odd:translate-y-28 md:*:last:odd:col-start-2 md:*:last:odd:col-end-3 md:*:last:odd:translate-y-0'
+}` >
   <slot />
 </ul>

@@ -8,12 +8,13 @@ interface Props {
   reverse?: boolean;
   align?: 'start' | 'center';
   class?: string;
+  action?: boolean;
 }
 
-const { title, subtitle, description, align = 'center', reverse = false, class: className } = Astro.props as Props;
+const { title, subtitle, description, align = 'center', reverse = false, class: className, action = false } = Astro.props as Props;
 ---
 
-<section 
+<div 
   id="hero"
   class={`text-${align} ${className}`}
 >
@@ -25,18 +26,24 @@ const { title, subtitle, description, align = 'center', reverse = false, class: 
         <p class={`text-${align} font-light text-xl text-teal-700 dark:text-teal-500 text-shadow-2xs shadow-teal-500 md:text-2xl`}>{description}</p>
       </div>
     </div>
-    <div class="hidden md:block mt-8">
-      <CallToAction 
-        href="mailto:contactos@lombardidev.ar"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="py-2 px-8 w-auto text-center rounded-full no-underline shadow-md text-slate-50 bg-gradient-to-r from-teal-700 via-green-500 to-teal-900"
-      >
-        Contactame
-      </CallToAction>
-    </div>
+    {
+      action 
+        ? (
+          <div class="hidden md:block mt-8">
+            <CallToAction 
+              href="mailto:contactos@lombardidev.ar"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="py-2 px-8 w-auto text-center rounded-full no-underline shadow-md text-slate-50 bg-gradient-to-r from-teal-700 via-green-500 to-teal-900"
+            >
+              Contactame
+            </CallToAction>
+          </div>
+        )
+        : (<></>)
+    }
   </div>
   <div>
     <slot />
   </div>
-</section>
+</div>
